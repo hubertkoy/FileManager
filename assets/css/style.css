@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+html, body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300
+}
+
+#login-form .form-input,
+#register-form .form-input {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+#login-form .form-input i,
+#register-form .form-input i {
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 10px
+}
+
+#login-form .form-control,
+#register-form .form-control {
+    height: 50px;
+    text-indent: 24px;
+    font-size: 15px
+}
+
+#login-form .form-control:focus,
+#register-form .form-control:focus{
+    background-color: #fafafa;
+    box-shadow: none;
+    border-color: #4f63e7
+}
+
+.signup {
+    height: 50px;
+    width: 100%;
+    font-size: 1em;
+}
