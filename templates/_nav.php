@@ -15,22 +15,26 @@ $loggedIn = Session::getInstance()->isAuthorized();
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <button class="btn btn-secondary mx-1 <?php if ($_SERVER['REQUEST_URI'] == '/') echo ' active'; ?>"
-                        onclick="window.location.href='/';">Home</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-secondary mx-1 <?php if ($_SERVER['REQUEST_URI'] == '/files') echo ' active'; ?>"
-                        onclick="window.location.href='/files';">Files</button>
+                            onclick="window.location.href='/';">Home
+                    </button>
                 </li>
                 <?php if (!$loggedIn) { ?>
                     <li class="nav-item">
                         <button class="btn btn-secondary mx-1 <?php if ($_SERVER['REQUEST_URI'] == '/login') echo ' active'; ?>"
-                        onclick="window.location.href='/login';">Login</button>
+                                onclick="window.location.href='/login';">Login
+                        </button>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-secondary mx-1 <?php if ($_SERVER['REQUEST_URI'] == '/register') echo ' active'; ?>"
-                        onclick="window.location.href='/register';">Register</button>
+                                onclick="window.location.href='/register';">Register
+                        </button>
                     </li>
                 <?php } else { ?>
+                    <li class="nav-item">
+                        <button class="btn btn-secondary mx-1 <?php if ($_SERVER['REQUEST_URI'] == '/files') echo ' active'; ?>"
+                                onclick="window.location.href='/files';">Files
+                        </button>
+                    </li>
                     <li class="nav-item">
                         <button class="btn btn-secondary mx-1" id="logout-button">Logout</button>
                     </li>

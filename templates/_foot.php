@@ -17,7 +17,6 @@ logoutButton.addEventListener('click', e => {
         responseStatus = response.status;
         return response.json();
     }).then(data => {
-        console.log(data, responseStatus);
         if (responseStatus === 200) {
             const container = document.getElementById('main');
             const messageBox = document.getElementById('message');

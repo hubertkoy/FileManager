@@ -41,11 +41,10 @@ $loggedIn = Session::getInstance()->isAuthorized();
                                 responseStatus = response.status;
                                 return response.json()
                             }).then(data => {
-                                console.log(data)
                                 const messageBox = document.getElementById('message');
                                 messageBox.innerText = data['message'];
                                 messageBox.removeAttribute("hidden");
-                                if(responseStatus != 200) {
+                                if(responseStatus !== 200) {
                                     messageBox.setAttribute("class","m-3 alert alert-danger");
                                 } else {
                                     messageBox.setAttribute("class","m-3 alert alert-success");

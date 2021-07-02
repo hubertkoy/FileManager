@@ -30,6 +30,7 @@ $loggedIn = Session::getInstance()->isAuthorized();
                     <script>
                         const registerForm = document.getElementById('register-form');
                         const registerButton = document.getElementById('register-submit');
+                        let status;
                         registerButton.addEventListener('click', e => {
                             e.preventDefault();
                             const email = registerForm.email.value;
@@ -47,16 +48,18 @@ $loggedIn = Session::getInstance()->isAuthorized();
                                     passwd: passwd,
                                     repasswd: repasswd
                                 })
-                            }).then(response => response.json()).then(data => {
-                                console.log(data)
+                            }).then(response => {
+                                status = response.status;
+                                return response.json();
+                            }).then(data => {
                                 const messageBox = document.getElementById('message');
                                 messageBox.innerText = data['message'];
                                 messageBox.removeAttribute("hidden");
-                                if(data['error']) {
-                                    messageBox.setAttribute("class","m-3 alert alert-danger");
+                                if (data['error']) {
+                                    messageBox.setAttribute("class", "m-3 alert alert-danger");
                                 } else {
-                                    messageBox.setAttribute("class","m-3 alert alert-success");
-                                    setTimeout(function(){
+                                    messageBox.setAttribute("class", "m-3 alert alert-success");
+                                    setTimeout(function () {
                                         window.location.href = '/login';
                                     }, 5000);
                                     registerForm.innerHTML = "Web page redirects after 5 seconds.";
