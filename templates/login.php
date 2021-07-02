@@ -44,11 +44,11 @@ $loggedIn = Session::getInstance()->isAuthorized();
                                 const messageBox = document.getElementById('message');
                                 messageBox.innerText = data['message'];
                                 messageBox.removeAttribute("hidden");
-                                if(responseStatus !== 200) {
-                                    messageBox.setAttribute("class","m-3 alert alert-danger");
+                                if (responseStatus !== 200) {
+                                    messageBox.setAttribute("class", "m-3 alert alert-danger");
                                 } else {
-                                    messageBox.setAttribute("class","m-3 alert alert-success");
-                                    setTimeout(function(){
+                                    messageBox.setAttribute("class", "m-3 alert alert-success");
+                                    setTimeout(function () {
                                         window.location.href = '/';
                                     }, 5000);
                                     loginForm.innerHTML = "Web page redirects after 5 seconds.";
